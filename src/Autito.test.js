@@ -24,4 +24,10 @@ describe("Auto", () => {
     auto.Inicializar("5,5/1,2N/IAIAIAIAA");
     expect(auto.Y).toBe(2);
   });
+
+  it("Mostrar dirección inicial", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/IAIAIAIAA");
+    expect(auto.direction).toBe('N');
+  });
 });

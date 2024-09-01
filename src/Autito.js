@@ -5,6 +5,7 @@ export class Auto{
     this.maxY = 0;
     this.X = 0;
     this.Y = 0;
+    this.direction='';
   }
 
   Inicializar(comandos) {
@@ -23,8 +24,9 @@ export class Auto{
     const positionData = this.getComandoPosicion(comandos);
     const parte2 = positionData.split(',');
       this.X = parseInt(parte2[0]);
-      this.Y = parseInt(parte2[1]);
-  }
+      this.Y = parseInt(parte2[1].charAt(0));
+      this.direction = parte2[1].charAt(1);
+  } //5,5/1,2N/IAIAIAIAA
 
   getComandoDimension(comandos) {
     return comandos.split('/')[0];

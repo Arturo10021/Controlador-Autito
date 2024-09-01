@@ -1,4 +1,4 @@
-import {Auto} from "./auto";
+import {Auto} from "./Autito";
 
 const comando = document.querySelector("#comando");
 const form = document.querySelector("#comandos-form");
@@ -9,7 +9,8 @@ form.addEventListener("submit", (event) => {
 
   const auto = new Auto();
   const com = comando.value;
-  auto.inicializar(com);
+  auto.Inicializar(com);
 
-  div.innerHTML = "<p>" + mostrarDimencionX(x) + "," + mostrarDimencionY(y) + "</p>";
+  div.innerHTML = "<p>" + "Dimension: " + auto.maxX + "," + auto.maxY + "</p>" +
+                  "<p>" + "Posicion: " + auto.X + "," + auto.Y + auto.direction + "</p>";
 });
