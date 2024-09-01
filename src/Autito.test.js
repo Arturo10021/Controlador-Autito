@@ -1,10 +1,14 @@
-import { mostrarDimencionX, mostrarDimencionY } from "./Autito.js";
+import Auto from "./Autito";
 
-describe("MoverAuto", () => {
-  it("Mostrar dimensión X de la superficie", () => {
-    expect(mostrarDimencionX(1)).toEqual(1);
+describe("Auto", () => {
+  it("Mostrar dimension X", () => {
+    const auto = new Auto();
+    auto.Inicializar(["5,5"]);
+    expect(auto.maxX).toBe(5);
   });
-  it("Mostrar dimensión Y de la superficie", () => {
-    expect(mostrarDimencionY(2)).toEqual(2);
+  it("Mostrar dimension Y", () => {
+    const auto = new Auto();
+    auto.Inicializar(["5,5"]);
+    expect(auto.maxY).toBe(5);
   });
-});
+  });
