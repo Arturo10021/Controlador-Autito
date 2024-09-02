@@ -54,4 +54,10 @@ describe("Auto", () => {
     expect(auto.direction).toBe('E');
   });
 
+  it("Mostrar Comandos", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/IAIAIAIAA");
+    expect(auto.Movimientos).toBe('IAIAIAIAA');
+  });
+
 });

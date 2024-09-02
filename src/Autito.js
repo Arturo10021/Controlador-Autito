@@ -9,12 +9,14 @@ export class Auto{
     this.iniX = 0;
     this.iniY = 0;
     this.iniDirection = '';
+    this.Movimientos = '';
   }
 
   Inicializar(comandos) {
     this.setGrid(comandos);
     this.getPosicionInicial(comandos)
     this.setPosicion(comandos);
+    this.getMovimientos(comandos);
   }
 
   setGrid(comandos) {
@@ -97,6 +99,10 @@ export class Auto{
     if (direccionActual === 'O') {
       this.direction = 'N';
     }
+  }
+
+  getMovimientos(comandos){
+    this.Movimientos = comandos.split('/')[2];
   }
 } 
 export default Auto;
