@@ -64,5 +64,22 @@ export class Auto{
       this.X--;
     }
   }
+
+  girarIzquierda() {
+    const direccionActual = this.direction;
+  
+    if (direccionActual === 'N') {
+      this.direction = 'O';
+    }
+    if (direccionActual === 'E') {
+      this.direction = 'N';
+    }
+    if (direccionActual === 'S') {
+      this.direction = 'E';
+    }
+    if (direccionActual === 'O') {
+      this.direction = 'S';
+    }
+  }
 } 
 export default Auto;

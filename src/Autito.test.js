@@ -40,5 +40,11 @@ describe("Auto", () => {
     expect(auto.direction).toBe('N');
   });
 
+  it("Comando girar a la izquierda", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/A");
+    auto.girarIzquierda();
+    expect(auto.direction).toBe('O');
+  });
 
 });
