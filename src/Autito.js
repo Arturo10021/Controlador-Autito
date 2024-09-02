@@ -6,10 +6,14 @@ export class Auto{
     this.X = 0;
     this.Y = 0;
     this.direction='';
+    this.iniX = 0;
+    this.iniY = 0;
+    this.iniDirection = '';
   }
 
   Inicializar(comandos) {
     this.setGrid(comandos);
+    this.getPosicionInicial(comandos)
     this.setPosicion(comandos);
   }
 
@@ -36,6 +40,14 @@ export class Auto{
     return comandos.split('/')[1];
   }
 
+  getPosicionInicial(comandos) {
+    const positionData = this.getComandoPosicion(comandos);
+    const parte2 = positionData.split(',');
+      this.iniX = parseInt(parte2[0]);
+      this.iniY = parseInt(parte2[1].charAt(0));
+      this.iniDirection = parte2[1].charAt(1);
+  }
+
   Avanzar() {
     const direccionActual = this.direction;
   
@@ -52,6 +64,5 @@ export class Auto{
       this.X--;
     }
   }
-
-}
-  export default Auto;
+} 
+export default Auto;

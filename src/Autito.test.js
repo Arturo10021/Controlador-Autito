@@ -16,19 +16,19 @@ describe("Auto", () => {
   it("Mostrar Posición inicial X", () => {
     const auto = new Auto();
     auto.Inicializar("5,5/1,2N/IAIAIAIAA");
-    expect(auto.X).toBe(1);
+    expect(auto.iniX).toBe(1);
   });
 
   it("Mostrar Posición inicial Y", () => {
     const auto = new Auto();
     auto.Inicializar("5,5/1,2N/IAIAIAIAA");
-    expect(auto.Y).toBe(2);
+    expect(auto.iniY).toBe(2);
   });
 
   it("Mostrar dirección inicial", () => {
     const auto = new Auto();
     auto.Inicializar("5,5/1,2N/IAIAIAIAA");
-    expect(auto.direction).toBe('N');
+    expect(auto.iniDirection).toBe('N');
   });
 
   it("Comando Avanzar", () => {
@@ -39,4 +39,6 @@ describe("Auto", () => {
     expect(auto.Y).toBe(1);
     expect(auto.direction).toBe('N');
   });
+
+
 });
