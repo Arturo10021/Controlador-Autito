@@ -36,5 +36,22 @@ export class Auto{
     return comandos.split('/')[1];
   }
 
+  Avanzar() {
+    const direccionActual = this.direction;
+  
+    if (direccionActual === 'N') {
+      this.Y--;
+    }
+    if (direccionActual === 'E') {
+      this.X++;
+    }
+    if (direccionActual === 'S') {
+      this.Y++;
+    }
+    if (direccionActual === 'O') {
+      this.X--;
+    }
+  }
+
 }
   export default Auto;

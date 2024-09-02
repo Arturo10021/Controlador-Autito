@@ -30,4 +30,13 @@ describe("Auto", () => {
     auto.Inicializar("5,5/1,2N/IAIAIAIAA");
     expect(auto.direction).toBe('N');
   });
+
+  it("Comando Avanzar", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/A");
+    auto.Avanzar();
+    expect(auto.X).toBe(1);
+    expect(auto.Y).toBe(1);
+    expect(auto.direction).toBe('N');
+  });
 });
