@@ -81,5 +81,22 @@ export class Auto{
       this.direction = 'S';
     }
   }
+
+  girarDerecha() {
+    const direccionActual = this.direction;
+  
+    if (direccionActual === 'N') {
+      this.direction = 'E';
+    }
+    if (direccionActual === 'E') {
+      this.direction = 'S';
+    }
+    if (direccionActual === 'S') {
+      this.direction = 'O';
+    }
+    if (direccionActual === 'O') {
+      this.direction = 'N';
+    }
+  }
 } 
 export default Auto;
