@@ -68,4 +68,10 @@ describe("Auto", () => {
     expect(auto.Y).toBe(3);
     expect(auto.direction).toBe('N');
   });
+
+  it("Validar entrada de comando", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/IAIAIAIAA");
+    expect(auto.validarComandos(auto.iniX, auto.iniY, auto.iniDirection, auto.maxX, auto.maxY, auto.Movimientos)).toBe(true);
+  });
 });

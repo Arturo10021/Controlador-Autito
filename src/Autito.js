@@ -116,5 +116,22 @@ export class Auto{
   getMovimientos(comandos){
     this.Movimientos = comandos.split('/')[2];
   }
+
+  validarComandos(iniX, iniY, iniDirection, maxX, maxY, Movimientos){
+    let resp = true;
+    if (iniX > maxX || iniY > maxY) {
+      resp= false;
+    }
+    if (iniDirection !== 'N' && iniDirection !== 'E' && iniDirection !== 'S' && iniDirection !== 'O') {
+      resp= false;
+    }
+    for (let i = 0; i < Movimientos.length; i++) {
+      const comando = Movimientos[i];
+      if (comando !== 'A' && comando !== 'D' && comando !== 'I') {
+        resp= false;
+      }
+    }
+    return resp;
+  }
 } 
 export default Auto;
