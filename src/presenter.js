@@ -12,7 +12,7 @@ form.addEventListener("submit", (event) => {
   auto.Inicializar(com);
 
   div.innerHTML = "<p>" + "Dimension: " + auto.maxX + "," + auto.maxY + "</p>" +
-                  "<p>" + "Posicion Inicial: " + auto.iniX + "," + auto.iniY + auto.iniDirection + "</p>"
-                   +
+                  "<p>" + "Posicion Inicial: " + auto.iniX + "," + auto.iniY + auto.iniDirection + "</p>" +
+                  "<p>" + "Comandos: " + auto.Movimientos + "</p>" +
                   "<p>" + "Posicion Final: " + auto.X + "," + auto.Y + auto.direction + "</p>";
 });
