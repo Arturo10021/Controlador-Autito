@@ -10,6 +10,7 @@ export class Auto{
     this.iniY = 0;
     this.iniDirection = '';
     this.Movimientos = '';
+    
   }
 
   Inicializar(comandos) {
@@ -32,7 +33,7 @@ export class Auto{
       this.X = parseInt(parte2[0]);
       this.Y = parseInt(parte2[1].charAt(0));
       this.direction = parte2[1].charAt(1);
-  } //5,5/1,2N/IAIAIAIAA
+  } 
 
   getComandoDimension(comandos) {
     return comandos.split('/')[0];
@@ -50,21 +51,32 @@ export class Auto{
       this.iniDirection = parte2[1].charAt(1);
   }
 
+  EjecutarComandos(){
+    for (let i = 0; i < this.Movimientos.length; i++) {
+      const comando = this.Movimientos[i];
+
+      if (comando === 'A') {
+        this.Avanzar();
+      } else if (comando === 'D') {
+        this.girarDerecha();
+      } else if (comando === 'I') {
+        this.girarIzquierda();
+      }
+    }
+  }
+
   Avanzar() {
     const direccionActual = this.direction;
   
-    if (direccionActual === 'N') {
-      this.Y--;
-    }
-    if (direccionActual === 'E') {
-      this.X++;
-    }
-    if (direccionActual === 'S') {
+    if (direccionActual === 'N' && this.Y < this.maxY) {
       this.Y++;
-    }
-    if (direccionActual === 'O') {
+  } else if (direccionActual === 'E' && this.X < this.maxX) {
+      this.X++;
+  } else if (direccionActual === 'S' && this.Y > 0) {
+      this.Y--;
+  } else if (direccionActual === 'O' && this.X > 0) {
       this.X--;
-    }
+  }
   }
 
   girarIzquierda() {

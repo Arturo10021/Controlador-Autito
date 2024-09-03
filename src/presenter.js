@@ -10,6 +10,7 @@ form.addEventListener("submit", (event) => {
   const auto = new Auto();
   const com = comando.value;
   auto.Inicializar(com);
+  auto.EjecutarComandos();
 
   div.innerHTML = "<p>" + "Dimension: " + auto.maxX + "," + auto.maxY + "</p>" +
                   "<p>" + "Posicion Inicial: " + auto.iniX + "," + auto.iniY + auto.iniDirection + "</p>" +

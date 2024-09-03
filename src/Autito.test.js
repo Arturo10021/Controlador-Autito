@@ -36,7 +36,7 @@ describe("Auto", () => {
     auto.Inicializar("5,5/1,2N/A");
     auto.Avanzar();
     expect(auto.X).toBe(1);
-    expect(auto.Y).toBe(1);
+    expect(auto.Y).toBe(3);
     expect(auto.direction).toBe('N');
   });
 
@@ -60,4 +60,12 @@ describe("Auto", () => {
     expect(auto.Movimientos).toBe('IAIAIAIAA');
   });
 
+  it("Mostrar Posicion Final", () => {
+    const auto = new Auto();
+    auto.Inicializar("5,5/1,2N/IAIAIAIAA");
+    auto.EjecutarComandos();
+    expect(auto.X).toBe(1);
+    expect(auto.Y).toBe(3);
+    expect(auto.direction).toBe('N');
+  });
 });
