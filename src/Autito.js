@@ -84,14 +84,11 @@ export class Auto{
   
     if (direccionActual === 'N') {
       this.direction = 'O';
-    }
-    if (direccionActual === 'E') {
+    } else if (direccionActual === 'E') {
       this.direction = 'N';
-    }
-    if (direccionActual === 'S') {
+    } else if (direccionActual === 'S') {
       this.direction = 'E';
-    }
-    if (direccionActual === 'O') {
+    } else if (direccionActual === 'O') {
       this.direction = 'S';
     }
   }
@@ -101,14 +98,11 @@ export class Auto{
   
     if (direccionActual === 'N') {
       this.direction = 'E';
-    }
-    if (direccionActual === 'E') {
+    } else if (direccionActual === 'E') {
       this.direction = 'S';
-    }
-    if (direccionActual === 'S') {
+    } else if (direccionActual === 'S') {
       this.direction = 'O';
-    }
-    if (direccionActual === 'O') {
+    } else if (direccionActual === 'O') {
       this.direction = 'N';
     }
   }
@@ -119,7 +113,7 @@ export class Auto{
 
   validarComandos(iniX, iniY, iniDirection, maxX, maxY, Movimientos){
     let resp = true;
-    if (iniX > maxX || iniY > maxY) {
+    if (iniX > maxX || iniY > maxY|| iniX < 0 || iniY < 0) {
       resp= false;
     }
     if (iniDirection !== 'N' && iniDirection !== 'E' && iniDirection !== 'S' && iniDirection !== 'O') {
