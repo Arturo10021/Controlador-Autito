@@ -116,6 +116,12 @@ export class Auto{
     if (iniX > maxX || iniY > maxY|| iniX < 0 || iniY < 0) {
       resp= false;
     }
+    if (maxX < 0 || maxY < 0) {
+      resp= false;
+    }
+    if (isNaN(maxX) || isNaN(maxY)) {
+      resp= false;
+    }
     if (iniDirection !== 'N' && iniDirection !== 'E' && iniDirection !== 'S' && iniDirection !== 'O') {
       resp= false;
     }

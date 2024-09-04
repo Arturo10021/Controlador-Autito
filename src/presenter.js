@@ -11,9 +11,14 @@ form.addEventListener("submit", (event) => {
   const com = comando.value;
   auto.Inicializar(com);
   auto.EjecutarComandos();
-
-  div.innerHTML = "<p>" + "Dimension: " + auto.maxX + "," + auto.maxY + "</p>" +
-                  "<p>" + "Posicion Inicial: " + auto.iniX + "," + auto.iniY + auto.iniDirection + "</p>" +
-                  "<p>" + "Comandos: " + auto.Movimientos + "</p>" +
-                  "<p>" + "Posicion Final: " + auto.X + "," + auto.Y + auto.direction + "</p>";
+  //validar si la entrada de todos los comandos es correcta y sigue la sintaxis correcta
+  if(auto.validarComandos(auto.iniX, auto.iniY, auto.iniDirection, auto.maxX, auto.maxY, auto.Movimientos)===true){
+    div.innerHTML = "<p>" + "Dimension: " + auto.maxX + "," + auto.maxY + "</p>" +
+                    "<p>" + "Posicion Inicial: " + auto.iniX + "," + auto.iniY + auto.iniDirection + "</p>" +
+                    "<p>" + "Comandos: " + auto.Movimientos + "</p>" +
+                    "<p>" + "Posicion Final: " + auto.X + "," + auto.Y + auto.direction + "</p>";
+  }
+  else{
+    div.innerHTML = "<p>" + "Comando Invalido" + "</p>";
+  }
 });

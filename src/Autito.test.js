@@ -41,56 +41,40 @@ describe("Auto", () => {
   });
 
   it("Comando girar a la izquierda", () => {
-    /*const auto = new Auto();
-    auto.Inicializar("5,5/1,2N/A");
-    auto.girarIzquierda();
-    expect(auto.direction).toBe('O');*/
     const autito = new Auto();
   
-  // Girar izquierda desde el Norte
   autito.direction = 'N';
   autito.girarIzquierda();
   expect(autito.direction).toBe('O');
   
-  // Girar izquierda desde el Este
   autito.direction = 'E';
   autito.girarIzquierda();
   expect(autito.direction).toBe('N');
   
-  // Girar izquierda desde el Sur
   autito.direction = 'S';
   autito.girarIzquierda();
   expect(autito.direction).toBe('E');
   
-  // Girar izquierda desde el Oeste
   autito.direction = 'O';
   autito.girarIzquierda();
   expect(autito.direction).toBe('S');
   });
 
   it("Comando girar a la derecha", () => {
-    /*const auto = new Auto();
-    auto.Inicializar("5,5/1,2N/A");
-    auto.girarDerecha();
-    expect(auto.direction).toBe('E');*/
-    const autito = new Auto();
+    const autito = new Auto()
   
-  // Girar derecha desde el Norte
   autito.direction = 'N';
   autito.girarDerecha();
   expect(autito.direction).toBe('E');
   
-  // Girar derecha desde el Este
   autito.direction = 'E';
   autito.girarDerecha();
   expect(autito.direction).toBe('S');
   
-  // Girar derecha desde el Sur
   autito.direction = 'S';
   autito.girarDerecha();
   expect(autito.direction).toBe('O');
   
-  // Girar derecha desde el Oeste
   autito.direction = 'O';
   autito.girarDerecha();
   expect(autito.direction).toBe('N');
@@ -112,13 +96,10 @@ describe("Auto", () => {
   });
 
   it("Validar entrada de comando", () => {
-    //const auto = new Auto();
-    //auto.Inicializar("5,5/1,2N/IAIAIAIAA");
-    //expect(auto.validarComandos(auto.iniX, auto.iniY, auto.iniDirection, auto.maxX, auto.maxY, auto.Movimientos)).toBe(true);
     const autito = new Auto();
-  expect(autito.validarComandos(7, 7, 'X', 6, 6, 'AIAIAI')).toBe(false);  // dirección inválida
-  expect(autito.validarComandos(0, 0, 'N', 6, 6, 'AIAIAZ')).toBe(false);  // comando inválido
-  expect(autito.validarComandos(7, 7, 'N', 6, 6, 'AIAIAI')).toBe(false);  // posición fuera de límites
+  expect(autito.validarComandos(7, 7, 'X', 6, 6, 'AIAIAI')).toBe(false);
+  expect(autito.validarComandos(0, 0, 'N', 6, 6, 'AIAIAZ')).toBe(false);  
+  expect(autito.validarComandos(7, 7, 'N', 6, 6, 'AIAIAI')).toBe(false);  
   });
 
   test('Validar comandos con posición inicial fuera de los límites', () => {
